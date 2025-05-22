@@ -160,7 +160,11 @@ CREATE TABLE recipes_ingredients  (
 
 ### 3.2. Arquitetura (Semana 5)
 
-*Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário.*
+<p align = "center">Figura 5: Diagrama de Arquitetura
+ 
+![modelagem_relacional](https://github.com/user-attachments/assets/5a838f8d-552d-4003-beac-a491194a71fc) 
+
+<p align = "center">Fonte: material produzido pela autora por intermédio do software draw.io (2025).</p> <br>
 
 **Instruções para criação do diagrama de arquitetura**  
 - **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
