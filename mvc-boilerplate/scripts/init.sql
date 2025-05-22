@@ -15,12 +15,6 @@ CREATE TABLE IF NOT EXISTS users (
   description TEXT
 );
 
-CREATE TABLE IF NOT EXISTS user_formations (
-  id SERIAL PRIMARY KEY,
-  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  formation TEXT NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS folders (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
