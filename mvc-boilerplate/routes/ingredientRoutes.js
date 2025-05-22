@@ -11,4 +11,6 @@ router.get('/ingredients/:id', IngredientController.obterIngrediente);
 // Endpoint para criar um novo usuário
 router.post('/ingredients', IngredientController.criarIngrediente);
 
+router.delete('/ingredients/:id', IngredientController.deletarIngrediente);
+
 module.exports = router;

@@ -14,6 +14,11 @@ const IngredientModel = {
     async createIngrediente ({name, specification}) {
         const result = await db.query('INSERT INTO ingredients (name, specification) VALUES ($1, $2) RETURNING *', [name, specification]);
         return result.rows[0];
+    },
+
+    async deletarIngrediente (id) {
+    const result = await db.query('DELETE FROM ingredients WHERE id = $1 RETURNING *', [id]);
+    return result.rows[0];
     }
 };
 module.exports = IngredientModel;

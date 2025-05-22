@@ -33,7 +33,18 @@ const RecipeController = {
         console.error('Erro ao criar receita:', err); // << isso vai te mostrar o erro real
         res.status(500).json({ error: 'Erro ao criar receita' });
       }
-  }
+  },
+
+    async deletarReceita(req, res) {
+      try {
+        const id = parseInt(req.params.id); // extrai o ID da URL
+        const receitaExcluir = await RecipeModel.deletarReceita(id);
+        return res.status(200).json({ message: 'Receita deletada com sucesso' });
+      } catch (err) {
+        console.error('Erro ao deletar receita:', err);
+        res.status(500).json({ error: 'Erro ao deletar receita' });
+      }
+    }
 };
 
 module.exports = RecipeController;

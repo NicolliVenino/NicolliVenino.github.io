@@ -33,6 +33,17 @@ const FolderController = {
         console.error('Erro ao criar pasta:', err); // << isso vai te mostrar o erro real
         res.status(500).json({ error: 'Erro ao criar pasta' });
       }
+  },
+
+  async deletarPasta(req, res) {
+    try {
+      const id = parseInt(req.params.id); // extrai o ID da URL
+      const pastaExcluir = await FolderModel.deletarPasta(id);
+      return res.status(200).json({ message: 'Pasta deletada com sucesso' });
+    } catch (err) {
+      console.error('Erro ao deletar pasta:', err);
+      res.status(500).json({ error: 'Erro ao deletar pasta' });
+    }
   }
 };
 

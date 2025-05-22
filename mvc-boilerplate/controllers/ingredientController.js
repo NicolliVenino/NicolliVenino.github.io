@@ -33,6 +33,17 @@ const IngredientController = {
         console.error('Erro ao criar ingrediente:', err); // << isso vai te mostrar o erro real
         res.status(500).json({ error: 'Erro ao criar ingredinte' });
       }
+  },
+
+    async deletarIngrediente(req, res) {
+    try {
+      const id = parseInt(req.params.id); // extrai o ID da URL
+      const ingredienteExcluir = await IngredientModel.deletarIngrediente(id);
+      return res.status(200).json({ message: 'Ingrediente deletado com sucesso' });
+    } catch (err) {
+      console.error('Erro ao deletar ingrediente:', err);
+      res.status(500).json({ error: 'Erro ao deletar ingrediente' });
+    }
   }
 };
 

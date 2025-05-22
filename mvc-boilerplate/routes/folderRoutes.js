@@ -11,4 +11,7 @@ router.get('/folders/:id', FolderController.obterPasta);
 // Endpoint para criar um novo usuário
 router.post('/folders', FolderController.criarPasta);
 
+// Endpoint para criar um novo usuário
+router.delete('/folders/:id', FolderController.deletarPasta);
+
 module.exports = router;

@@ -33,7 +33,19 @@ const UserController = {
         console.error('Erro ao criar usuário:', err); // << isso vai te mostrar o erro real
         res.status(500).json({ error: 'Erro ao criar usuário' });
       }
+  },
+
+      async deletarUsuario(req, res) {
+    try {
+      const id = parseInt(req.params.id); // extrai o ID da URL
+      const usuarioExcluir = await UserModel.deletarUsuario(id);
+      return res.status(200).json({ message: 'Usuario deletado com sucesso' });
+    } catch (err) {
+      console.error('Erro ao deletar usuário:', err);
+      res.status(500).json({ error: 'Erro ao deletar usuário' });
+    }
   }
+
 };
 
 module.exports = UserController;

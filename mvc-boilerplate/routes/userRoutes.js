@@ -11,4 +11,6 @@ router.get('/users/:id', UserController.obterUsuario);
 // Endpoint para criar um novo usuário
 router.post('/users', UserController.criarUsuario);
 
+router.delete('/users/:id', UserController.deletarUsuario);
+
 module.exports = router;
