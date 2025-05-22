@@ -36,7 +36,7 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 2: Segunda Persona</p>
 
-<p align="center"> <img src = "../assets/segunda_persona.png" align = "center"> </p>
+<p align="center"> <img src = "https://github.com/user-attachments/assets/50ab3ff8-b9f3-4940-8364-955921aed8a0" align = "center"> </p>
 
 <p align = "center">Fonte: material produzido pela autora (2025) - representação física da persona elaborada por inteligência artificial.</p> <br>
 
