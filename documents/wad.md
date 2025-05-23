@@ -30,7 +30,7 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 1: Primeira Persona</p>
 
-<p align="center"> <img src = "https://github.com/user-attachments/assets/1e718e0d-80e1-4842-b231-83a9ccdd2c92" align = "center"> </p>
+<p align="center"> <img src = "https://github.com/user-attachments/assets/bf8d2d45-86a6-4204-8f4d-e1d544dd6004" align = "center"> </p>
 
 <p align = "center">Fonte: material produzido pela autora (2025) - representação física da persona elaborada por inteligência artificial.</p> <br>
 
@@ -71,7 +71,7 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 3: Modelagem Conceitual</p>
 
-<p align="center"> <img src = "https://github.com/user-attachments/assets/6b8f65a7-68ba-4944-b91c-f7309829ed4b" align = "center"> </p>
+<p align="center"> <img src = "https://github.com/user-attachments/assets/ecd9819e-e99d-43e7-8207-7f99acedfad7" align = "center"> </p>
 
 <p align = "center">Fonte: material produzido pela autora por intermédio do software DRAW.io (2025).</p> <br>
 
@@ -79,7 +79,7 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 4: Modelagem Relacional</p>
 
-![modelagem_relacional](https://github.com/user-attachments/assets/f36bcd59-fd3f-46ae-8eac-12ef11ad354a) 
+<p align="center"> <img src = "https://github.com/user-attachments/assets/eb0f52d9-256d-481f-b994-314fb5179223" align = "center"> </p>
 
 <p align = "center">Fonte: material produzido pela autora por intermédio do software drawSQL (2025).</p> <br>
 
@@ -177,7 +177,7 @@ CREATE TABLE recipes_ingredients  (
 
 <p align = "center">Figura 5: Wireframe</p>
 
-<p align="center"> <img src = "https://github.com/user-attachments/assets/74079edf-e30f-4403-8132-4374c2e6ffc8" align = "center"> </p>
+<p align="center"> <img src = "https://github.com/user-attachments/assets/1d731a4f-7c37-4338-8219-e281c2f07217" align = "center"> </p>
 
 <p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
 
