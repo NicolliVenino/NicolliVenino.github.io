@@ -81,7 +81,9 @@ node server.js
 
 1) Mude o nome do arquivo .env.example para .env
    
-2) Coloque as informações do banco de dados no arquivo .env
+2) Insira os valores das variáveis de ambiente do seu banco de dados no arquivo .env
+   
+   <i> Obs: caso o banco de dados esteja hospedado remotamente, como no Supabase, certifique-se de que está inserindo as informações do Transaction Pooler e insira "true" em DB_SSL. Garanta também que está enviando os valores no formato string.</i>
 
 ```
 DB_USER=
@@ -99,55 +101,6 @@ npm run init-db
 ```
 ## Como testar as APIs:
 
-- Use Postman, Insomnia ou outra ferramenta similar;
-- Teste os seguintes endpoints:
-
-```
-GET https://localhost:3000/recipeinfolder : para listar todas as relações entre receitas e pastas;
-
-GET https://localhost:3000/recipeinfolder/:id : para obter uma única relação entre receita e pasta;
-  
-POST https://localhost:3000/recipeinfolder : para criar uma nova relação entre receita e pasta;
-
-DELETE https://localhost:3000/recipeinfolder/:id : para deletar uma relação entre receita e pasta;
-
-GET https://localhost:3000/folders : para listas todas as pastas;
-
-GET https://localhost:3000/folders/:id : para obter uma única pasta;
-
-POST https://localhost:3000/folders : para criar uma nova pasta;
-  
-DELETE https://localhost:3000/folders/:id : para deletar uma pasta;
-
-GET https://localhost:3000/ingredients : para listar todos os ingredientes;
-
-GET https://localhost:3000/ingredients/:id : para obter um único ingrediente;
-
-POST https://localhost:3000/ingredients : para criar um novo ingrediente;
-  
-DELETE https://localhost:3000/ingredients/:id : para deletar um ingrediente;
-  
-GET https://localhost:3000/ingredientinrecipe : para listar todas as relações entre receitas e ingredientes;
-
-GET https://localhost:3000/ingredientinrecipe/:id : para obter uma única relação entre receita e ingrediente;
-
-POST https://localhost:3000/ingredientinrecipe : para criar uma nova relação entre receita e ingrediente;
-
-DELETE https://localhost:3000/ingredientinrecipe/:id : para deletar uma relação entre receita e ingrediente;
-  
-GET https://localhost:3000/recipes : para listar todas as receitas;
-
-GET https://localhost:3000/recipes/:id : para obter uma única receita;
-
-POST https://localhost:3000/recipes : para criar uma nova receita;
-
-DELETE https://localhost:3000/recipes/:id : para deletar uma receita;
-
-GET https://localhost:3000/users : para listar todos os usuários;
-
-GET https://localhost:3000/users/:id : para obter um único usuário;
- 
-POST https://localhost:3000/users : para criar um novo usuário;
-
-DELETE https://localhost:3000/users/:id : para deletar um usuário.
-```
+1) Rode o código no terminal com ``` node server.js ```;
+2) Use o Postman, Insomnia ou outra ferramenta similar;
+3) Teste os endpoints descritos na seção 3.6 do Web Application Document (arquivo wad.md).
