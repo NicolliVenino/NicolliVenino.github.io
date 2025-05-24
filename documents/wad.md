@@ -71,7 +71,9 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 3: Modelagem Conceitual</p>
 
-<p align="center"><img src="assets/modelagem_conceitual_recipedia.png" alt="modelagem conceitual do banco de dados"></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1eb20a13-89f2-4351-adbc-7f787df16891" alt="Modelagem Conceitual do Banco de Dados">
+</p>
 
 <p align = "center">Fonte: material produzido pela autora por intermédio do software DRAW.io (2025).</p> <br>
 
