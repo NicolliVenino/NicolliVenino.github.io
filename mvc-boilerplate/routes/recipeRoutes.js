@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const RecipeController = require('../controllers/recipeController');
 
-// Endpoint para listar todos os usuários
+// Endpoint para listar todas as receitas
 router.get('/recipes', RecipeController.listarReceitas);
 
-// Endpoint para obter um usuário específico pelo ID
+// Endpoint para obter uma receita a partir do id
 router.get('/recipes/:id', RecipeController.obterReceita);
 
-// Endpoint para criar um novo usuário
+// Endpoint para criar uma receita
 router.post('/recipes', RecipeController.criarReceita);
 
+// Endpoint para deletar uma receita
 router.delete('/recipes/:id', RecipeController.deletarReceita);
 
 module.exports = router;

@@ -1,6 +1,8 @@
 const RecipeModel = require('../models/recipeModel');
 
 const RecipeController = {
+
+  // Define um método assíncrono para listar receitas, de modo a lidar com uma requisão GET.
   async listarReceitas(req, res) {
     try {
       const receitas = await RecipeModel.getAllReceitas();
@@ -11,6 +13,7 @@ const RecipeController = {
     }
   },
 
+  // Define um método assíncrono para obter uma receita a partir do id, de modo a lidar com uma requisão GET.
   async obterReceita(req, res) {
     try {
       const { id } = req.params;
@@ -25,6 +28,7 @@ const RecipeController = {
     }
   },
 
+  // Define um método assíncrono para criar uma receita, de modo a lidar com uma requisão POST.
   async criarReceita(req, res) {
     try {
       const novaReceita = await RecipeModel.createReceita(req.body);
@@ -35,6 +39,7 @@ const RecipeController = {
       }
   },
 
+  // Define um método assíncrono para deletar uma receita, de modo a lidar com uma requisão DELETE.
     async deletarReceita(req, res) {
       try {
         const id = parseInt(req.params.id); // extrai o ID da URL

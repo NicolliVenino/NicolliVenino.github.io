@@ -1,6 +1,8 @@
 const IngredientModel = require('../models/ingredientModel');
 
 const IngredientController = {
+
+  // Define um método assíncrono para listar ingredientes, de modo a lidar com uma requisão GET.
   async listarIngredientes(req, res) {
     try {
       const ingredientes = await IngredientModel.getAllIngredientes();
@@ -11,6 +13,7 @@ const IngredientController = {
     }
   },
 
+  // Define um método assíncrono para obter um ingrediente a partir do id, de modo a lidar com uma requisão GET.
   async obterIngrediente(req, res) {
     try {
       const { id } = req.params;
@@ -25,19 +28,21 @@ const IngredientController = {
     }
   },
 
+  // Define um método assíncrono para criar um ingrediente, de modo a lidar com uma requisão POST.
   async criarIngrediente(req, res) {
     try {
       const novoIngrediente = await IngredientModel.createIngrediente(req.body);
       return res.status(201).json(novoIngrediente);
       } catch (err) {
-        console.error('Erro ao criar ingrediente:', err); // << isso vai te mostrar o erro real
+        console.error('Erro ao criar ingrediente:', err); 
         res.status(500).json({ error: 'Erro ao criar ingredinte' });
       }
   },
 
+    // Define um método assíncrono para deletar um ingrediente a partir do id, de modo a lidar com uma requisão DELETE.
     async deletarIngrediente(req, res) {
     try {
-      const id = parseInt(req.params.id); // extrai o ID da URL
+      const id = parseInt(req.params.id); 
       const ingredienteExcluir = await IngredientModel.deletarIngrediente(id);
       return res.status(200).json({ message: 'Ingrediente deletado com sucesso' });
     } catch (err) {

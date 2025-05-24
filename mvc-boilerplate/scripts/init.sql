@@ -1,9 +1,7 @@
--- init.sql
-
--- Criar extensão para suportar UUIDs, se ainda não estiver ativada
+-- Cria extensão para suportar UUIDs
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- Criar tabela de usuários com UUID como chave primária
+-- Cria tabela de usuários
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   first_name TEXT NOT NULL,
@@ -15,6 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
   description TEXT
 );
 
+-- Cria tabela de pastas
 CREATE TABLE IF NOT EXISTS folders (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
@@ -22,6 +21,7 @@ CREATE TABLE IF NOT EXISTS folders (
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
 );
 
+-- Cria tabela de receitas
 CREATE TABLE IF NOT EXISTS recipes (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS recipes (
   author TEXT NOT NULL
 );
 
+-- Cria tabela de relação entre pastas e receitas
 CREATE TABLE IF NOT EXISTS folders_recipes (
   id SERIAL PRIMARY KEY,
   folder_id INT NOT NULL REFERENCES folders(id) ON DELETE CASCADE,
@@ -44,12 +45,14 @@ CREATE TABLE IF NOT EXISTS folders_recipes (
   UNIQUE(folder_id, recipe_id)
 );
 
+-- Cria tabela de ingredientes
 CREATE TABLE IF NOT EXISTS ingredients (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   specification TEXT
 );
 
+-- Cria tabela de relação entre receitas e ingredientes
 CREATE TABLE IF NOT EXISTS recipes_ingredients (
   id SERIAL PRIMARY KEY,
   recipe_id INT NOT NULL REFERENCES recipes(id) ON DELETE CASCADE,
@@ -57,6 +60,7 @@ CREATE TABLE IF NOT EXISTS recipes_ingredients (
   UNIQUE(recipe_id, ingredient_id)
 );
 
+-- Insere valores fictícios na tabela receitas.
 INSERT INTO recipes (
   name, image, type, category, directions, prep_time, cook_time, servings, amount, score, author
 ) VALUES (
