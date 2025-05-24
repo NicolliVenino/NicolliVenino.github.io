@@ -93,7 +93,7 @@ DB_SSL=
 PORT=
 ```
 
-2) Rode o Banco de Dados
+3) Rode o Banco de Dados
 ```
 npm run init-db
 ```
