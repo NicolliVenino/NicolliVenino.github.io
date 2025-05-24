@@ -101,4 +101,51 @@ npm run init-db
 
 - Use Postman, Insomnia ou outra ferramenta similar;
 - Teste os seguintes endpoints:
+  
+GET https://localhost:3000/recipeinfolder : para listar todas as relações entre receitas e pastas;
 
+GET https://localhost:3000/recipeinfolder/:id : para obter uma única relação entre receita e pasta;
+  
+POST https://localhost:3000/recipeinfolder : para criar uma nova relação entre receita e pasta;
+
+DELETE https://localhost:3000/recipeinfolder/:id : para deletar uma relação entre receita e pasta;
+
+GET https://localhost:3000/folders : para listas todas as pastas;
+
+GET https://localhost:3000/folders/:id : para obter uma única pasta;
+
+POST https://localhost:3000/folders : para criar uma nova pasta;
+  
+DELETE https://localhost:3000/folders/:id : para deletar uma pasta;
+
+GET https://localhost:3000/ingredients : para listar todos os ingredientes;
+
+GET https://localhost:3000/ingredients/:id : para obter um único ingrediente;
+
+POST https://localhost:3000/ingredients : para criar um novo ingrediente;
+  
+DELETE https://localhost:3000/ingredients/:id : para deletar um ingrediente;
+  
+GET https://localhost:3000/ingredientinrecipe : para listar todas as relações entre receitas e ingredientes;
+
+GET https://localhost:3000/ingredientinrecipe/:id : para obter uma única relação entre receita e ingrediente;
+
+POST https://localhost:3000/ingredientinrecipe : para criar uma nova relação entre receita e ingrediente;
+
+DELETE https://localhost:3000/ingredientinrecipe/:id : para deletar uma relação entre receita e ingrediente;
+  
+GET https://localhost:3000/recipes : para listar todas as receitas;
+
+GET https://localhost:3000/recipes/:id : para obter uma única receita;
+
+POST https://localhost:3000/recipes : para criar uma nova receita;
+
+DELETE https://localhost:3000/recipes/:id : para deletar uma receita;
+
+GET https://localhost:3000/users : para listar todos os usuários;
+
+GET https://localhost:3000/users/:id : para obter um único usuário;
+ 
+POST https://localhost:3000/users : para criar um novo usuário;
+
+- DELETE https://localhost:3000/users/:id : para deletar um usuário.
