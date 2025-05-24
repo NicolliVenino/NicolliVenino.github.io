@@ -196,7 +196,135 @@ CREATE TABLE recipes_ingredients  (
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-*Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema.*  
+Um endpoint configura-se como o "endereço de uma API" que possibilita a comunicação entre sistema e, dessa forma, permite que uma rede envie ou receba informações. Pode-se compreendê-lo como uma rota de API, a qual conecta URLs às funções dos controllers - para relizar ações como criar, obter, atualizar ou deletar.
+
+Segue abaixo uma lista dos endpoints criados na pasta routes e uma breve descrição da sua funcionalidade:
+
+Arquivo folder_recipeRoutes.js:
+<ul>
+ 
+<li> router.post('/recipeinfolder', Folder_RecipeController.adicionarReceita): endpoint para adicinar uma receita em uma pasta;
+
+<li> router.get('/recipeinfolder', Folder_RecipeController.listarPastasReceitas): endpoint para listar receitas em pastas;
+
+<li> router.get('/recipeinfolder/:id', Folder_RecipeController.obterPastaReceita): endpoint para obter receita em uma pasta;
+
+<li> router.delete('/recipeinfolder/:id', Folder_RecipeController.deletarPastaReceita): endpoint para deletar receita em uma pasta.
+
+</ul>
+
+Arquivo folderRoutes.js:
+<ul>
+ 
+<li> router.get('/folders', FolderController.listarPastas): endpoint para listar todos as pastas;
+
+<li> router.get('/folders/:id', FolderController.obterPasta): endpoint para obter uma pasta a partir do id;
+
+<li> router.post('/folders', FolderController.criarPasta): endpoint para criar uma pasta;
+
+<li> router.delete('/folders/:id', FolderController.deletarPasta): endpoint para deletar uma pasta.
+
+</ul>
+
+Arquivo ingredientRoutes.js:
+<ul>
+ 
+<li> router.get('/ingredients', IngredientController.listarIngredientes): endpoint para listar todos os ingredientes;
+
+<li> router.get('/ingredients/:id', IngredientController.obterIngrediente): endpoint para obter um ingrediente a partir do id;
+
+<li> router.post('/ingredients', IngredientController.criarIngrediente): endpoint para criar um ingrediente;
+
+<li> router.delete('/ingredients/:id', IngredientController.deletarIngrediente): endpoint para deletar um ingrediente.
+
+</ul>
+
+Arquivo recipe_ingredientRoutes.js:
+<ul>
+ 
+<li> router.get('/ingredientinrecipe', Recipe_IngredientController.listar_ingrediente_da_receita): endpoint para listar ingredientes de uma receita;
+
+<li> router.get('/ingredientinrecipe/:id', Recipe_IngredientController.obter_ingrediente_da_receita): endpoint para obter um ingrediente de uma receita;
+
+<li> router.post('/ingredientinrecipe', Recipe_IngredientController.ingrediente_da_receita): endpoint para colocar um ingrediente em uma receita;
+
+<li> router.delete('/ingredientinrecipe/:id', Recipe_IngredientController.deletar_ingrediente_da_receita): endpoint deletar um ingrediente de uma receita.
+
+ </ul>
+ 
+Arquivo recipeRoutes.js:
+<ul>
+ 
+<li> router.get('/recipes', RecipeController.listarReceitas): endpoint para listar todas as receitas;
+
+<li> router.get('/recipes/:id', RecipeController.obterReceita): endpoint para obter uma receita a partir do id;
+
+<li> router.post('/recipes', RecipeController.criarReceita): endpoint para criar uma receita;
+
+<li> router.delete('/recipes/:id', RecipeController.deletarReceita): endpoint para deletar uma receita.
+
+</ul>
+
+Arquivo userRoutes.js:
+<ul> 
+ 
+<li> router.get('/users', UserController.listarUsuarios): endpoint para listar todos os usuários;
+
+<li> router.get('/users/:id', UserController.obterUsuario): endpoint para obter um usuário a partir do id;
+
+<li> router.post('/users', UserController.criarUsuario): endpoint para criar um usuário;
+
+<li> router.delete('/users/:id', UserController.deletarUsuario): endpoint para deletar um usuário.
+
+</ul>
+
+Sob essa análise, no arquivo server.js foi definida as rotas das APIs da seguinte forma:
+<ul>
+<li> app.use('/api', folder_recipeRoutes); , no qual const folder_recipeRoutes = require('./routes/folder_recipeRoutes'); 
+<li> app.use('/api', folderRoutes); , no qual const fol derRoutes = require('./routes/folderRoutes');
+<li> app.use('/api', ingredientRoutes); , no qual const ingredientRoutes = require('./routes/ingredientRoutes');
+<li> app.use('/api', recipe_ingredientRoutes); no qual: const recipe_ingredientRoutes = require('./routes/recipe_ingredientRoutes');
+<li> app.use('/api', recipeRoutes); , no qual: const recipeRoutes = require('./routes/recipeRoutes');
+<li> app.use('/api', userRoutes); , no qual: const userRoutes = require('./routes/userRoutes');
+</ul>
+
+de modo que temos:
+
+- GET https://localhost:3000/recipeinfolder 
+
+- POST https://localhost:3000/recipeinfolder/:id
+
+- DELETE https://localhost:3000/recipeinfolder/:id
+
+- GET https://localhost:3000/folders
+
+- POST https://localhost:3000/folders/:id
+  
+- DELETE https://localhost:3000/folders/:id
+
+- GET https://localhost:3000/ingredients
+
+- POST https://localhost:3000/ingredients/:id
+  
+- DELETE https://localhost:3000/ingredients/:id
+  
+- GET https://localhost:3000/ingredientinrecipe
+
+- POST https://localhost:3000/ingredientinrecipe/:id
+
+- DELETE https://localhost:3000/ingredientinrecipe/:id
+  
+- GET https://localhost:3000/recipes
+
+- POST https://localhost:3000/recipes/:id
+
+- DELETE https://localhost:3000/recipes/:id
+
+- GET https://localhost:3000/users
+
+- POST https://localhost:3000/users/:id
+
+- DELETE https://localhost:3000/users/:id
 
 ### 3.7 Interface e Navegação (Semana 07)
 
