@@ -101,7 +101,8 @@ npm run init-db
 
 - Use Postman, Insomnia ou outra ferramenta similar;
 - Teste os seguintes endpoints:
-  
+
+```
 GET https://localhost:3000/recipeinfolder : para listar todas as relações entre receitas e pastas;
 
 GET https://localhost:3000/recipeinfolder/:id : para obter uma única relação entre receita e pasta;
@@ -148,4 +149,5 @@ GET https://localhost:3000/users/:id : para obter um único usuário;
  
 POST https://localhost:3000/users : para criar um novo usuário;
 
-- DELETE https://localhost:3000/users/:id : para deletar um usuário.
+DELETE https://localhost:3000/users/:id : para deletar um usuário.
+```
