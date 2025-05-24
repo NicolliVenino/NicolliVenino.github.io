@@ -81,7 +81,9 @@ Além disso, vale mencionar que o site abrange a função dos usuários criarem 
 
 <p align = "center">Figura 4: Modelagem Relacional</p>
 
-<p align="center"> <img src = "https://github.com/user-attachments/assets/eb0f52d9-256d-481f-b994-314fb5179223" align = "center"> </p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a07065fd-71d8-409f-8720-6e0dec8b89a9" alt="Modelagem Relacional do Banco de Dados">
+</p>
 
 <p align = "center">Fonte: material produzido pela autora por intermédio do software drawSQL (2025).</p> <br>
 
