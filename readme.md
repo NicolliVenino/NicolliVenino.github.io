@@ -76,3 +76,29 @@ npm install express ejs pg dotenv
 ```
 node server.js
 ```
+
+# Como configurar o banco de dados?
+
+1) Mude o nome do arquivo .env.example para .env
+   
+2) Coloque as informações do banco de dados no arquivo .env
+
+```
+DB_USER=
+DB_HOST=
+DB_DATABASE=
+DB_PASSWORD=
+DB_PORT=
+DB_SSL=
+PORT=
+```
+
+2) Rode o Banco de Dados
+```
+npm run init-db
+```
+## Como testar as APIs:
+
+- Use Postman, Insomnia ou outra ferramenta similar;
+- Teste os seguintes endpoints:
+
