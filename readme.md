@@ -58,7 +58,7 @@ Projeto_Inteli_Recipedia/
 - Instalação do PostgreSQL (v15+);
 - Instalação do Express (v4+);
 - Instalação do dotenv (v10+);
-- Instalação do Git.
+- Instalação das dependências do ejs (arquivos tangentes às views da aplicação).
 
 ## Instalação
 
