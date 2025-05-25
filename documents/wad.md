@@ -160,7 +160,16 @@ CREATE TABLE recipes_ingredients  (
 
 ```
 ### 3.1.4 BD e Models (Semana 5)
-*Descreva aqui os Models implementados no sistema web*
+
+Os Models implementados interagi diretamente com o banco de dados, de modo que define funções para manipular os dados da aplicação. 
+Segue abaixo uma lista dos arquivos da pasta Models do projeto - os quais definem funções para listar, obter, criar e deletar:
+
+- folder_recipeModel; 
+- folderModel;
+- ingredientModel;
+- recipe_ingredientModel;
+- recipeModel;
+- userModel.
 
 ### 3.2. Arquitetura (Semana 5)
 
