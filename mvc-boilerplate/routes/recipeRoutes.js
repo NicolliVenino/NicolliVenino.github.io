@@ -14,4 +14,6 @@ router.post('/recipes', RecipeController.criarReceita);
 // Endpoint para deletar uma receita
 router.delete('/recipes/:id', RecipeController.deletarReceita);
 
+router.get('/dashboard', RecipeController.renderizarDashboard);
+
 module.exports = router;

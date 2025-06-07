@@ -49,6 +49,16 @@ const RecipeController = {
         console.error('Erro ao deletar receita:', err);
         res.status(500).json({ error: 'Erro ao deletar receita' });
       }
+    },
+
+    async renderizarDashboard(req, res) {
+      try {
+        const receitas = await RecipeModel.getAllReceitas(); // busca todas as receitas do model
+        return res.render('dashboard', { receitas }); // renderiza o EJS passando as receitas
+      } catch (error) {
+        console.error('Erro ao carregar o dashboard:', error);
+        return res.status(500).send('Erro ao carregar o dashboard');
+      }
     }
 };
 

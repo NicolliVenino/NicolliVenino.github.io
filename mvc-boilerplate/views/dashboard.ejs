@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Receitas</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Recipedia</div>
+    <input type="text" placeholder="Buscar receitas...">
+    <div class="user-actions">
+      <button class="icon-btn">💬</button>
+      <button class="icon-btn">👤</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="recipe-grid">
+      <% receitas.forEach(receita => { %>
+        <div class="recipe-card">
+          <img src="<%= receita.imagemUrl %>" alt="Receita">
+          <div class="recipe-info">
+            <h3><%= receita.titulo %></h3>
+            <p><%= receita.descricao %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+</body>
+</html>
+
