@@ -79,24 +79,38 @@ const RecipeController = {
         res.status(500).json({ error: 'Erro ao deletar receita' });
       }
     },
-
+    
     async renderizarDetalheReceita(req, res) {
   try {
     const { id } = req.params;
 
-    // Busca a receita pelo ID
     const receitaResult = await db.query('SELECT * FROM recipes WHERE id = $1', [id]);
     const receita = receitaResult.rows[0];
 
-    // Simulando o ID do usuário logado (substitua por req.session.user.id ou similar se tiver login)
-    const usuarioId = 5;
+    if (!receita) {
+      return res.status(404).send('Receita não encontrada');
+    }
 
     const pastasResult = await db.query('SELECT id, name FROM folders');
-    
     const pastas = pastasResult.rows;
 
-    // Renderiza passando as pastas para o EJS
-    res.render('detalheReceita', { receita, pastas });
+    const outrasReceitasResult = await db.query(`
+      SELECT id, name, image FROM recipes
+      WHERE id <> $1
+      LIMIT 6
+    `, [id]);
+
+    const outrasReceitas = outrasReceitasResult.rows;
+
+    const esquerda = outrasReceitas.slice(0, 3); // primeiras 3
+    const direita = outrasReceitas.slice(3);     // últimas 3
+
+    res.render('detalheReceita', {
+      receita,
+      pastas,
+      esquerda,
+      direita
+    });
 
   } catch (error) {
     console.error('Erro ao renderizar detalhe da receita:', error);
