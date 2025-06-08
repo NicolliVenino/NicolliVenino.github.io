@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard - Receitas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
@@ -11,21 +16,25 @@
     <input type="text" placeholder="Buscar receitas...">
     <div class="user-actions">
       <button class="icon-btn">💬</button>
-      <button class="icon-btn">👤</button>
+      <a href="/usuario/perfil">
+      <img src="/images/nicolli-venino.jpg" alt="Foto de perfil" wifth="40" height="40" class="profile-pic">
+      </a>
     </div>
   </header>
 
   <main>
     <div class="recipe-grid">
       <% receitas.forEach(receita => { %>
-        <div class="recipe-card">
-          <img src="<%= receita.imagemUrl %>" alt="Receita">
-          <div class="recipe-info">
-            <h3><%= receita.titulo %></h3>
-            <p><%= receita.descricao %></p>
-          </div>
-        </div>
-      <% }) %>
+      <a href="/receitas/<%= receita.id %>" class="recipe-link">
+      <div class="recipe-card">
+      <img src="<%= receita.image %>" alt="Receita">
+      <div class="recipe-info">
+        <h3><%= receita.name %></h3>
+        <p><%= receita.directions %></p>
+      </div>
+      </div>
+      </a>
+    <% }) %>
     </div>
   </main>
 </body>

@@ -1,3 +1,4 @@
+const db = require('../config/db');
 const FolderModel = require('../models/folderModel');
 
 const FolderController = {
@@ -49,7 +50,21 @@ const FolderController = {
       console.error('Erro ao deletar pasta:', err);
       res.status(500).json({ error: 'Erro ao deletar pasta' });
     }
+  },
+
+  async salvarReceitaNaPasta(req, res) {
+  const { folderId, recipeId } = req.body;
+  try {
+    await db.query(
+      'INSERT INTO folders_recipes (folder_id, recipe_id) VALUES ($1, $2)',
+      [folderId, recipeId]
+    );
+    res.redirect(`/receitas/${recipeId}`); // ou outra página de sua preferência
+  } catch (err) {
+    console.error('Erro ao salvar receita na pasta:', err);
+    res.status(500).send('Erro ao salvar receita');
   }
+}
 };
 
 module.exports = FolderController;

@@ -1,3 +1,8 @@
+a.recipe-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Milonga", serif;
   background-color: #fff;
   color: #333;
 }

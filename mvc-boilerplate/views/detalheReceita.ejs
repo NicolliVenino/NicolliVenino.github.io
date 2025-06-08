@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title><%= receita.name %></title>
+  <link rel="stylesheet" href="/css/detalheReceita.css">
+</head>
+<body>
+  <div class="recipe-page">
+    
+    <!-- COLUNA CENTRAL - RECEITA PRINCIPAL -->
+    <div class="middle-panel">
+      
+      <!-- BOTÕES DE AÇÃO -->
+      <div class="action-buttons">
+        <button title="Voltar">←</button>
+        <button title="Baixar imagem">⬇️</button>
+        <button title="Comentar">💬</button>
+        <button title="Curtir">❤️</button>
+      </div>
+
+      <!-- DETALHES DA RECEITA -->
+       <div style="position: relative;">
+        <form action="/folders/salvar" method="POST" style="position: absolute; top: 0px; right: 10px;">
+        <input type="hidden" name="recipeId" value="<%= receita.id %>">
+    
+        <select name="folderId" required>
+        <% pastas.forEach(pasta => { %>
+            <option value="<%= pasta.id %>"><%= pasta.name %></option>
+        <% }) %>
+        </select>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded">
+        Salvar na Pasta
+        </button>
+    </form>
+    </div>
+
+      <div class="recipe-main">
+        <div class="recipe-image">
+          <img src="<%= receita.image %>" alt="<%= receita.name %>">
+          <!-- Botão com dropdown de pastas -->
+<div class="save-dropdown">
+  <button class="save-button">Salvar na pasta ▼</button>
+  <ul class="dropdown-list">
+    <% pastas.forEach(function(pasta) { %>
+      <li>
+        <form action="/folders/salvar-receita" method="POST">
+          <input type="hidden" name="folderId" value="<%= pasta.id %>">
+          <input type="hidden" name="recipeId" value="<%= receita.id %>">
+          <button type="submit"><%= pasta.name %></button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+        </div>
+
+        <h2><%= receita.name %></h2>
+        <div class="author-line">
+          <span class="icon">👤</span> <%= receita.author %>
+        </div>
+
+        <!-- INFORMAÇÕES EM CAIXAS -->
+        <div class="info-boxes">
+          <div class="info-box">Preparo: <%= receita.prep_time %> min</div>
+          <div class="info-box">Cozimento: <%= receita.cook_time %> min</div>
+          <div class="info-box">Rendimento: <%= receita.amount %></div>
+          <div class="info-box">Avaliação: <%= receita.score %>/5</div>
+        </div>
+
+        <!-- MODO DE PREPARO -->
+        <h3>Modo de Preparo:</h3>
+        <p><%= receita.directions %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+

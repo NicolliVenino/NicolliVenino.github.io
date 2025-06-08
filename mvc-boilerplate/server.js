@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Rotas da API com prefixo /api
-app.use('/api', recipeRoutes);
-app.use('/api', userRoutes);
+app.use('/', recipeRoutes);
+app.use('/', userRoutes);
 app.use('/api', folderRoutes);
 app.use('/api', ingredientRoutes);
 app.use('/api', folder_recipeRoutes);

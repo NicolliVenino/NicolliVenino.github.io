@@ -23,7 +23,7 @@ exports.loginProcess = (req, res) => {
   // Verifica as credenciais
   if (username === validUser.username && password === validUser.password) {
     // Em caso de sucesso, renderiza o dashboard
-    res.redirect('/api/dashboard');
+    res.redirect('/dashboard');
   } else {
     // Em caso de falha, retorna a página de login com mensagem de erro
     return res.render('login', { error: 'Usuário ou senha inválidos.' });

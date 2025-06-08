@@ -11,6 +11,8 @@ router.get('/folders/:id', FolderController.obterPasta);
 // Endpoint para criar uma pasta
 router.post('/folders', FolderController.criarPasta);
 
+router.post('/folders/salvar-receita', FolderController.salvarReceitaNaPasta);
+
 // Endpoint para deletar uma pasta
 router.delete('/folders/:id', FolderController.deletarPasta);
 

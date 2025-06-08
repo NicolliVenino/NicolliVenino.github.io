@@ -11,6 +11,9 @@ router.get('/recipes/:id', RecipeController.obterReceita);
 // Endpoint para criar uma receita
 router.post('/recipes', RecipeController.criarReceita);
 
+router.put('/recipes/:id', RecipeController.updateReceita);
+
+router.get('/receitas/:id', RecipeController.renderizarDetalheReceita);
 // Endpoint para deletar uma receita
 router.delete('/recipes/:id', RecipeController.deletarReceita);
 

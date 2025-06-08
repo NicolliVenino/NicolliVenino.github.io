@@ -1,3 +1,4 @@
+const db = require('../config/db');
 const UserModel = require('../models/userModel');
 
 const UserController = {
@@ -49,7 +50,30 @@ const UserController = {
       console.error('Erro ao deletar usuário:', err);
       res.status(500).json({ error: 'Erro ao deletar usuário' });
     }
+  },
+
+  async renderizarPerfil(req, res) {
+  try {
+    const usuarioId = 5; // ou outro valor temporário para teste
+
+    const usuarioResult = await db.query('SELECT first_name, avatar FROM users WHERE id = $1', [usuarioId]);
+    const pastasResult = await db.query('SELECT id, name, description FROM folders WHERE user_id = $1', [usuarioId]);
+
+    if (usuarioResult.rows.length === 0) {
+      return res.status(404).send('Usuário não encontrado');
+    }
+
+    const usuario = usuarioResult.rows[0];
+    const pastas = pastasResult.rows;
+
+    res.render('perfilUsuario', { usuario, pastas });
+  } catch (error) {
+    console.error('Erro ao carregar perfil:', error); // Esse console é importante agora
+    res.status(500).send('Erro ao carregar perfil do usuário');
   }
+}
+
+
 
 };
 

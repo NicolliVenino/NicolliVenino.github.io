@@ -14,4 +14,6 @@ router.post('/users', UserController.criarUsuario);
 // Endpoint para deletar um usuário
 router.delete('/users/:id', UserController.deletarUsuario);
 
+router.get('/usuario/perfil', UserController.renderizarPerfil);
+
 module.exports = router;
