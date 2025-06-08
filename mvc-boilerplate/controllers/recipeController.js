@@ -89,13 +89,10 @@ const RecipeController = {
     const receita = receitaResult.rows[0];
 
     // Simulando o ID do usuário logado (substitua por req.session.user.id ou similar se tiver login)
-    const usuarioId = 1;
+    const usuarioId = 5;
 
-    // Busca as pastas desse usuário
-    const pastasResult = await db.query(
-      'SELECT id, name FROM folders WHERE user_id = $1',
-      [usuarioId]
-    );
+    const pastasResult = await db.query('SELECT id, name FROM folders');
+    
     const pastas = pastasResult.rows;
 
     // Renderiza passando as pastas para o EJS

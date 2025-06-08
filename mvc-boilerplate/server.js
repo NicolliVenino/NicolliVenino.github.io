@@ -26,13 +26,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Rotas da API com prefixo /api
-app.use('/', recipeRoutes);
-app.use('/', userRoutes);
-app.use('/api', folderRoutes);
-app.use('/api', ingredientRoutes);
-app.use('/api', folder_recipeRoutes);
-app.use('/api', recipe_ingredientRoutes);
 app.use('/', authRoutes);
+app.use('/', userRoutes);
+app.use('/', recipeRoutes);
+app.use('/', folderRoutes);
+app.use('/api', ingredientRoutes);
+app.use('/', folder_recipeRoutes);
+app.use('/api', recipe_ingredientRoutes);
 
 // Inicializa o servidor
 const PORT = process.env.PORT || 3000;

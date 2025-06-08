@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title><%= pasta.name %> - Pasta</title>
+  <link rel="stylesheet" href="/css/pasta.css">
+</head>
+<body>
+  <h1>Receitas da pasta "<%= pasta.name %>"</h1>
+
+  <% if (receitas.length === 0) { %>
+    <p>Nenhuma receita nesta pasta ainda.</p>
+  <% } else { %>
+    <div class="receitas-grid">
+      <% receitas.forEach(receita => { %>
+        <div class="receita-card">
+          <a href="/receitas/<%= receita.id %>">
+            <img src="<%= receita.image %>" alt="<%= receita.name %>">
+            <h2><%= receita.name %></h2>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</body>
+</html>

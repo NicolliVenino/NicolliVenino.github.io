@@ -34,10 +34,10 @@ const FolderController = {
     try {
       const novaPasta = await FolderModel.createPasta(req.body);
       return res.status(201).json(novaPasta);
-      } catch (err) {
-        console.error('Erro ao criar pasta:', err); 
-        res.status(500).json({ error: 'Erro ao criar pasta' });
-      }
+    } catch (err) {
+      console.error('Erro ao criar pasta:', err); 
+      res.status(500).json({ error: 'Erro ao criar pasta' });
+    }
   },
 
   // Define um método assíncrono para deletar uma pasta a partir do id, de modo a lidar com uma requisão DELETE.
@@ -53,18 +53,42 @@ const FolderController = {
   },
 
   async salvarReceitaNaPasta(req, res) {
-  const { folderId, recipeId } = req.body;
-  try {
-    await db.query(
-      'INSERT INTO folders_recipes (folder_id, recipe_id) VALUES ($1, $2)',
-      [folderId, recipeId]
-    );
-    res.redirect(`/receitas/${recipeId}`); // ou outra página de sua preferência
-  } catch (err) {
-    console.error('Erro ao salvar receita na pasta:', err);
-    res.status(500).send('Erro ao salvar receita');
+    const { folderId, recipeId } = req.body;
+    console.log("REQ.BODY:", req.body);
+    try {
+      await db.query(
+        'INSERT INTO folders_recipes (folder_id, recipe_id) VALUES ($1, $2)',
+        [folderId, recipeId]
+      );
+      res.redirect(`/receitas/${recipeId}`);
+    } catch (err) {
+      console.error('Erro ao salvar receita na pasta:', err);
+      res.status(500).send('Erro ao salvar receita');
+    }
+  },
+
+  // NOVO MÉTODO: visualiza uma pasta e exibe suas receitas associadas
+  async visualizarPasta(req, res) {
+    const folderId = req.params.id;
+    try {
+      const pastaResult = await db.query('SELECT * FROM folders WHERE id = $1', [folderId]);
+      const pasta = pastaResult.rows[0];
+
+      const receitasResult = await db.query(`
+        SELECT r.*
+        FROM recipes r
+        JOIN folders_recipes fr ON r.id = fr.recipe_id
+        WHERE fr.folder_id = $1
+      `, [folderId]);
+
+      const receitas = receitasResult.rows;
+
+      res.render('pasta', { pasta, receitas });
+    } catch (err) {
+      console.error('Erro ao carregar a pasta e receitas:', err);
+      res.status(500).send('Erro ao carregar a pasta');
+    }
   }
-}
 };
 
 module.exports = FolderController;

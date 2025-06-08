@@ -54,26 +54,46 @@ const UserController = {
 
   async renderizarPerfil(req, res) {
   try {
-    const usuarioId = 5; // ou outro valor temporário para teste
+    const usuarioId = 5; // Substitua por req.session.userId ou variável dinâmica se houver login
 
-    const usuarioResult = await db.query('SELECT first_name, avatar FROM users WHERE id = $1', [usuarioId]);
-    const pastasResult = await db.query('SELECT id, name, description FROM folders WHERE user_id = $1', [usuarioId]);
-
+    // Buscar dados do usuário
+    const usuarioResult = await db.query(
+      'SELECT first_name, avatar FROM users WHERE id = $1',
+      [usuarioId]
+    );
     if (usuarioResult.rows.length === 0) {
       return res.status(404).send('Usuário não encontrado');
     }
-
     const usuario = usuarioResult.rows[0];
+
+    // Buscar pastas do usuário
+    const pastasResult = await db.query(
+      'SELECT id, name, description FROM folders WHERE user_id = $1',
+      [usuarioId]
+    );
     const pastas = pastasResult.rows;
 
+    // Para cada pasta, buscar até 3 receitas relacionadas (com imagem)
+    for (const pasta of pastas) {
+      const receitasResult = await db.query(`
+        SELECT r.id, r.name, r.image
+        FROM recipes r
+        INNER JOIN folders_recipes fr ON r.id = fr.recipe_id
+        WHERE fr.folder_id = $1
+        LIMIT 3
+      `, [pasta.id]);
+
+      pasta.receitasPreview = receitasResult.rows;
+    }
+
+    // Renderizar a página EJS com dados completos
     res.render('perfilUsuario', { usuario, pastas });
+
   } catch (error) {
-    console.error('Erro ao carregar perfil:', error); // Esse console é importante agora
+    console.error('Erro ao carregar perfil:', error);
     res.status(500).send('Erro ao carregar perfil do usuário');
   }
 }
-
-
 
 };
 

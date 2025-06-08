@@ -19,40 +19,24 @@
         <button title="Curtir">❤️</button>
       </div>
 
-      <!-- DETALHES DA RECEITA -->
-       <div style="position: relative;">
-        <form action="/folders/salvar" method="POST" style="position: absolute; top: 0px; right: 10px;">
-        <input type="hidden" name="recipeId" value="<%= receita.id %>">
-    
-        <select name="folderId" required>
-        <% pastas.forEach(pasta => { %>
-            <option value="<%= pasta.id %>"><%= pasta.name %></option>
-        <% }) %>
-        </select>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded">
-        Salvar na Pasta
-        </button>
-    </form>
-    </div>
+      <!-- FORMULÁRIO ÚNICO DE SALVAR RECEITA -->
+      <div style="position: relative;">
+        <form action="/folders/salvar-receita" method="POST" style="position: absolute; top: 0px; right: 10px;">
+          <input type="hidden" name="recipeId" value="<%= receita.id %>">
+          <select name="folderId" required>
+            <% pastas.forEach(pasta => { %>
+              <option value="<%= pasta.id %>"><%= pasta.name %></option>
+            <% }) %>
+          </select>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded">
+            Salvar na Pasta
+          </button>
+        </form>
+      </div>
 
       <div class="recipe-main">
         <div class="recipe-image">
           <img src="<%= receita.image %>" alt="<%= receita.name %>">
-          <!-- Botão com dropdown de pastas -->
-<div class="save-dropdown">
-  <button class="save-button">Salvar na pasta ▼</button>
-  <ul class="dropdown-list">
-    <% pastas.forEach(function(pasta) { %>
-      <li>
-        <form action="/folders/salvar-receita" method="POST">
-          <input type="hidden" name="folderId" value="<%= pasta.id %>">
-          <input type="hidden" name="recipeId" value="<%= receita.id %>">
-          <button type="submit"><%= pasta.name %></button>
-        </form>
-      </li>
-    <% }) %>
-  </ul>
-</div>
         </div>
 
         <h2><%= receita.name %></h2>
@@ -76,6 +60,3 @@
   </div>
 </body>
 </html>
-
-
-
