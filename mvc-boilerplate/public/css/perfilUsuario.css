@@ -1,7 +1,51 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Milonga", serif;
   margin: 0;
   background: #f5f5f5;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.barra-superior input[type="text"] {
+  width: 50%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+* {
+  margin: 0.5;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.card-pasta {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  height: auto;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card-pasta h3 {
+  margin-top: 10px;
+  font-family: 'Milonga', cursive;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .barra-superior {
@@ -9,7 +53,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #ddd;
+  background: #f8f8f8;
 }
 
 .barra-superior input {
@@ -24,7 +68,7 @@ body {
 
 .perfil-usuario {
   text-align: center;
-  background: #e0e0e0;
+  background: #ffffff;
   padding: 2rem 0;
 }
 
@@ -38,7 +82,7 @@ body {
 
 .titulo-pastas {
   text-align: center;
-  background: #ccc;
+  background: #f8f8f8;
   padding: 0.5rem;
   font-weight: bold;
 }
@@ -47,16 +91,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.card-pasta {
-  background: white;
-  border: 1px solid #aaa;
-  width: 200px;
-  text-decoration: none;
-  color: black;
+  gap: 20px;
+  padding: 20px;
 }
 
 .preview-receitas {
@@ -73,9 +109,35 @@ body {
 }
 
 .nome-pasta {
-  background: #ddd;
+  background: #ffffff;
   text-align: center;
   padding: 0.5rem;
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Centraliza */
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nome-usuario {
+  text-align: center;
+  font-family: 'Milonga', cursive;
+  margin-top: 10px;
+}
+
+

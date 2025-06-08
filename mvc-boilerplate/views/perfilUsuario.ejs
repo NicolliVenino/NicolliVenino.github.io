@@ -3,28 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Perfil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/perfilUsuario.css">
 </head>
 <body>
   <header class="topo">
     <!-- Cabeçalho fixo com busca e ícones -->
-    <div class="barra-superior">
+     <div class="barra-superior">
+      <div class="logo">Recipedia</div>
       <input type="text" placeholder="Buscar receitas...">
+      </div>
       <div class="icones">
         <i class="icone-mensagem"></i>
         <i class="icone-usuario"></i>
       </div>
     </div>
   </header>
-
+  <div class="logo">Recipedia</div>
   <main>
     <section class="perfil-usuario">
-      <div class="foto-perfil"></div>
-      <h2><%= usuario.name %></h2>
+      <div class="foto-perfil">
+      <img src="<%= usuario.avatar %>" alt="Foto de perfil" class="profile-pic">
+      </div>
+      <h2 class="nome-usuario"><%= usuario.first_name %></h2>
     </section>
 
     <section class="titulo-pastas">
-      <h3>Suas pastas</h3>
+      <h3>Suas Pastas</h3>
     </section>
 
     <section class="grid-pastas">
@@ -39,7 +48,7 @@
       <p>Sem receitas</p>
     <% } %>
   </div>
-  <h3><%= pasta.name %></h3>
+  <h3><%=pasta.name %></h3>
 </a>
       <% }) %>
     </section>
