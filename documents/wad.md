@@ -349,7 +349,51 @@ de modo que temos:
 
 ### 3.7 Interface e Navegação (Semana 07)
 
-*Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
+No que tange ao frontend do site, durante a Semana 7, foi desenvolvido uma página de login, um dashboard com a visualização de todas as receitas, uma página de “detalhe da receita”, sob a qual o usuário é redirecionado quando clica em uma receita, e uma página de perfil.
+
+#### Página de Login
+A página de login pede o nome do usuário e uma senha. Até o momento da Semana 7, só é possível acessar o site com o login estático pré-definido (username = admin e senha = 12345). Isso porque, em razão do prazo e da finalidade de teste, definir um login estático se tornou a opção mais adequada no cenário. No entanto, o próximo passo da aplicação é adicionar a funcionalidade de cadastro, de modo que a plataforma seja individualizada para cada usuário.
+
+<p align = "center">Figura 6: Página de Login </p>
+
+<p align="center"> <img src = "https://github.com/user-attachments/assets/2b4215e3-3825-469b-983c-ee5d0f59c316" align = "center"> </p>
+
+<p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
+
+#### Página de Dashboard
+Já a página de dashboard, por sua vez, contempla as receitas que o usuário pode acessar e salvar. 
+
+<p align = "center">Figura 7: Página de Dashboard </p>
+
+<p align="center"> <img src = "https://github.com/user-attachments/assets/12cdea63-c5f2-408d-9488-cba71b053fbd" align = "center"> </p>
+
+<p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
+
+#### Página de Detalhe da Receita
+Ao clicar em uma receita, o usuário é redirecionado para uma página de detalhe da receita, na qual ele pode visualizar os atributos prep_time, cook_time, amount, score, autor e o modo de preparo, assim como acessar o botão de salvar a receita em uma das suas pastas.
+
+Além disso, é possível visualizar outras receitas por intermédio de duas colunas que estão posicionadas entre a receita clicada. Dessa forma, caso o usuário se interesse por outra receita de uma das colunas, ele pode clicar e ser redirecionado para essa receita.
+
+<p align = "center">Figura 8: Página de Detalhe da Receita </p>
+
+<p align="center"> <img src = "https://github.com/user-attachments/assets/3b9dd8f3-cfdc-438b-ab2b-9aa8a885bc32" align = "center"> </p>
+
+<p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
+
+<p align = "center">Figura 9: Página de Detalhe da Receita </p>
+
+<p align="center"> <img src = "https://github.com/user-attachments/assets/e245e3c7-02e4-40c3-afc4-b463e08950b2" align = "center"> </p>
+
+<p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
+
+#### Página de Perfil
+Por último, a página de perfil contempla as pastas que o usuário possui (é possível ver a preview de três receitas que uma pasta contempla, e é possível clicar na pasta e visualizar as receitas que ela contém. No entanto, o frontend da visualização das receitas dentro da pasta ainda serão melhor detalhes futuramente. 
+
+<p align = "center">Figura 10: Página de Perfil </p>
+
+<p align="center"> <img src = "https://github.com/user-attachments/assets/dbc2b81d-28d0-4d6f-9477-e189652bf299" align = "center"> </p>
+
+<p align = "center">Fonte: material produzido pela autora (2025).</p> <br>
 
 ---
 
