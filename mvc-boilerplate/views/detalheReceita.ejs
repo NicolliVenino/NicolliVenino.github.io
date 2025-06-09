@@ -7,8 +7,7 @@
 </head>
 <body>
   <div class="recipe-page">
-    
-    <!-- COLUNA LATERAL ESQUERDA -->
+
     <div class="side-panel left-panel">
       <% esquerda.forEach(r => { %>
         <a href="/receitas/<%= r.id %>" class="recipe-card">
@@ -17,11 +16,8 @@
         </a>
       <% }) %>
     </div>
-
-    <!-- COLUNA CENTRAL -->
     <div class="middle-panel">
-      
-      <!-- BARRA DE BOTÕES -->
+
       <div class="action-buttons">
 
         <a href="/dashboard" class="action-buttons">
@@ -29,13 +25,10 @@
         </a>
         
       </div>
-
-      <!-- IMAGEM DA RECEITA -->
       <div class="recipe-image">
         <img src="<%= receita.image %>" alt="<%= receita.name %>">
       </div>
 
-      <!-- BOTÃO DE SALVAR -->
       <div class="save-form">
         <form action="/folders/salvar-receita" method="POST">
           <input type="hidden" name="recipeId" value="<%= receita.id %>">
@@ -48,7 +41,6 @@
         </form>
       </div>
 
-      <!-- INFORMAÇÕES DA RECEITA -->
       <div class="recipe-main">
         <h2><%= receita.name %></h2>
         <div class="author-line">
@@ -71,7 +63,6 @@
       </div>
     </div>
 
-    <!-- COLUNA LATERAL DIREITA -->
     <div class="side-panel right-panel">
       <% direita.forEach(r => { %>
         <a href="/receitas/<%= r.id %>" class="recipe-card">

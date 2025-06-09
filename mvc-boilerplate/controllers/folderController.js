@@ -67,7 +67,6 @@ const FolderController = {
     }
   },
 
-  // NOVO MÉTODO: visualiza uma pasta e exibe suas receitas associadas
   async visualizarPasta(req, res) {
     const folderId = req.params.id;
     try {

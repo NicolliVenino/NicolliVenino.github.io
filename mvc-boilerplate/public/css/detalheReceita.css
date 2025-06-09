@@ -16,7 +16,6 @@ body {
   gap: 20px;
 }
 
-/* LATERAIS */
 .side-panel {
   width: 15%;
   display: flex;
@@ -38,7 +37,6 @@ body {
   border-radius: 6px;
 }
 
-/* PAINEL CENTRAL */
 .middle-panel {
   width: 70%;
   background: white;
@@ -47,7 +45,6 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* BOTÕES DE AÇÃO */
 .action-buttons {
   display: flex;
   justify-content: flex-start;
@@ -62,14 +59,12 @@ body {
   cursor: pointer;
 }
 
-/* IMAGEM DA RECEITA */
 .recipe-image img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
-/* SALVAR NA PASTA */
 .save-form {
   display: flex;
   justify-content: flex-end;
@@ -95,8 +90,7 @@ body {
   padding: 5px;
   border-radius: 6px;
 }
-
-/* INFO PRINCIPAL */
+ 
 .recipe-main h2 {
   margin-top: 0;
   font-size: 2rem;
@@ -108,7 +102,6 @@ body {
   color: #555;
 }
 
-/* CAIXAS DE INFORMAÇÃO */
 .info-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -122,7 +115,6 @@ body {
   border-radius: 8px;
 }
 
-/* MODO DE PREPARO */
 h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;

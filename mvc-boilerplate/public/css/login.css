@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Imagem ocupando metade da tela */
 body {
   font-family: 'Georgia', serif;
   display: flex;
@@ -21,7 +19,6 @@ body {
   background-size: cover;
 }
 
-/* Container do login */
 .login-container {
   flex: 1;
   display: flex;
@@ -31,7 +28,6 @@ body {
   background-color: #ffffff;
 }
 
-/* Título estilizado */
 .login-container h1 {
   font-size: 3em;
   margin-bottom: 10px;
@@ -40,20 +36,17 @@ body {
   font-family: "Milonga", serif;
 }
 
-/* Formulário */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Rótulos */
 label {
   font-size: 1.1em;
   color: #000000;
 }
 
-/* Campos de entrada */
 input[type="text"],
 input[type="password"] {
   padding: 10px;
@@ -68,7 +61,6 @@ input:focus {
   outline: none;
 }
 
-/* Botão */
 button {
   background-color: #e4b07e;
   color: white;
@@ -84,7 +76,6 @@ button:hover {
   background-color: #c98e5c;
 }
 
-/* Mensagem de erro */
 .error {
   color: #c0392b;
   background-color: #fdecea;

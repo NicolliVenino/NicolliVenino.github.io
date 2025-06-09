@@ -73,7 +73,6 @@ const UserController = {
     );
     const pastas = pastasResult.rows;
 
-    // Para cada pasta, buscar até 3 receitas relacionadas (com imagem)
     for (const pasta of pastas) {
       const receitasResult = await db.query(`
         SELECT r.id, r.name, r.image
@@ -86,7 +85,6 @@ const UserController = {
       pasta.receitasPreview = receitasResult.rows;
     }
 
-    // Renderizar a página EJS com dados completos
     res.render('perfilUsuario', { usuario, pastas });
 
   } catch (error) {

@@ -37,7 +37,7 @@ const RecipeController = {
       const novaReceita = await RecipeModel.createReceita(req.body);
       return res.status(201).json(novaReceita);
       } catch (err) {
-        console.error('Erro ao criar receita:', err); // << isso vai te mostrar o erro real
+        console.error('Erro ao criar receita:', err); 
         res.status(500).json({ error: 'Erro ao criar receita' });
       }
   },
@@ -71,7 +71,7 @@ const RecipeController = {
   // Define um método assíncrono para deletar uma receita, de modo a lidar com uma requisão DELETE.
     async deletarReceita(req, res) {
       try {
-        const id = parseInt(req.params.id); // extrai o ID da URL
+        const id = parseInt(req.params.id);
         const receitaExcluir = await RecipeModel.deletarReceita(id);
         return res.status(200).json({ message: 'Receita deletada com sucesso' });
       } catch (err) {
@@ -102,8 +102,8 @@ const RecipeController = {
 
     const outrasReceitas = outrasReceitasResult.rows;
 
-    const esquerda = outrasReceitas.slice(0, 3); // primeiras 3
-    const direita = outrasReceitas.slice(3);     // últimas 3
+    const esquerda = outrasReceitas.slice(0, 3); 
+    const direita = outrasReceitas.slice(3);     
 
     res.render('detalheReceita', {
       receita,
@@ -120,8 +120,8 @@ const RecipeController = {
 
     async renderizarDashboard(req, res) {
       try {
-        const receitas = await RecipeModel.getAllReceitas(); // busca todas as receitas do model
-        return res.render('dashboard', { receitas }); // renderiza o EJS passando as receitas
+        const receitas = await RecipeModel.getAllReceitas(); 
+        return res.render('dashboard', { receitas }); 
       } catch (error) {
         console.error('Erro ao carregar o dashboard:', error);
         return res.status(500).send('Erro ao carregar o dashboard');

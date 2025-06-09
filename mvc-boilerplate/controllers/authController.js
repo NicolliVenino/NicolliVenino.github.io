@@ -1,6 +1,4 @@
-// controllers/authController.js
-
-// Usuário válido (exemplo estático)
+// Usuário válido (estático)
 const validUser = {
   username: 'admin',
   password: '12345'
