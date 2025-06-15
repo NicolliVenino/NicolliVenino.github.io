@@ -406,14 +406,12 @@ Por último, a página de perfil contempla as pastas que o usuário possui (é p
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
-*Indique pontos fortes e pontos a melhorar de maneira geral.*
-*Relacione também quaisquer outras ideias que você tenha para melhorias futuras.*
+Atualmente - após 4 Sprints - a plataforma contempla as funcionalidades que são, de fato, imprescindíveis no que tange ao escopo sob o qual o projeto foi designado. À exemplo disso, pode-se verificar a existência de um dashboard com receitas para o usuário salvar em suas pastas, uma página de detalhamento da receita que é possível verificar aspectos específicos de preparo quando a receita em questão é clicada e uma página de perfil, na qual o usuário pode visualizar suas pastas e rever as receitas que elas abrangem. Com isso, é possível mitigar as dores e abraçar as necessidades da primeira persona.
 
+No entanto, é notório que a plataforma ainda não incorpora funções importantes - como a de visualização dos ingredientes e da opção de o usuário publicar sua própria receita - assim como é fato que existem melhorias tangentes ao visual e a usabilidade que devem ser implementadas. Nesse sentido, sobre o acesso aos ingredientes da receita, é válido mencionar que já existe no banco de dados uma tabela que relaciona as receitas e seus respectivos ingredientes, de modo que resta apenas conectá-la com o frontend da página de detalhes da receita. Já a respeito da funcionalidade do usuário criar e publicar receitas na plataforma, entende-se que esta deve ser a próxima prioridade do projeto, a qual será implementada dentro das próximas duas semanas (ainda antes de encerrar o módulo 2 da Instituição). Dessa forma, será possível também amenizar as angústias da segunda persona do projeto.
 
+Além disso, é peremptório priorizar a página de cadastro, haja vista que, no cenário atual, só é possível acessar a plataforma por intermédio de um login pré-definido no código - o qual foi criado com fins exclusivamente de testes. Paralelamente, espera-se potencializar a experiência do usuário lapidando a estilização de todas as páginas e implementando, de maneira efetiva, o buscador de receitas - o qual ainda existe somente no frontend. 
 
-## <a name="c5"></a>5. Referências
-
-_Incluir as principais referências de seu projeto, para que o leitor possa consultar caso ele se interessar em aprofundar._<br>
 
 ---
 ---
