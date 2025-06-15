@@ -175,12 +175,12 @@ Segue abaixo uma lista dos arquivos da pasta Models do projeto - os quais define
 
 <p align = "center">Figura 5: Diagrama de Arquitetura
  
-![modelagem_relacional](https://github.com/user-attachments/assets/5a838f8d-552d-4003-beac-a491194a71fc) 
+![modelagem_relacional](https://github.com/user-attachments/assets/c106fcf5-9745-43a7-a189-da7faf0b1805) 
 
 <p align = "center">Fonte: material produzido pela autora por intermédio do software draw.io (2025).</p> <br>
 
 **Instruções para criação do diagrama de arquitetura**  
-- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
+- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.https://github.com/user-attachments/assets/c106fcf5-9745-43a7-a189-da7faf0b1805
 - **View**: A camada responsável pela interface de usuário.
 - **Controller**: A camada que recebe as requisições, processa as ações e atualiza o modelo e a visualização.
   
