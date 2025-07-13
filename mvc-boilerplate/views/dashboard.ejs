@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard - Receitas</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/dashboard.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinco</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <div class="logo">Recipedia</div>
-    <input type="text" placeholder="Buscar receitas...">
-    <div class="user-actions">
-      <a href="/usuario/perfil">
-      <img src="/images/nicolli-venino.jpg" alt="Foto de perfil" wifth="40" height="40" class="profile-pic">
-      </a>
+  <header class="top-bar">
+    <img src="/images/logo.png" alt="clinco logo" class="logo" />
+    <div class="support-area">
+      <button class="support-button">Material de Apoio</button>
+      <div class="profile-icon">👤</div>
     </div>
   </header>
 
   <main>
-    <div class="recipe-grid">
-      <% receitas.forEach(receita => { %>
-      <a href="/receitas/<%= receita.id %>" class="recipe-link">
-      <div class="recipe-card">
-      <img src="<%= receita.image %>" alt="Receita">
-      <div class="recipe-info">
-        <h3><%= receita.name %></h3>
-        <p><%= receita.directions %></p>
+    <section class="hero">
+      <div class="hero-text">Bem-vinda, Mari</div>
+      <div class="hero-banner">
+        <img src="/images/banner.png" alt="Banner" />
+        <button class="training-button" onclick="window.location.href='treinamento.ejs'">Treinamento</button>
       </div>
+    </section>
+
+    <section class="content">
+      <h2>Desenvolvimento</h2>
+      <p>Score médio das últimas 10 consultas: <span class="stars">⭐⭐⭐⭐</span></p>
+
+        <div class="badge">
+          <img src="/images/selo.png" alt="Selo prata" />
+          <h4>Nível Prata</h4>
+          <p>Especialização</p>
+          <p><strong>Resolução de casos complexos</strong></p>
+          <p>80h de treinamento</p>
+          <p class="description">Certificação intermediária para profissionais que demonstram expertise em comunicação médica humanizada, incluindo manejo de casos complexos e situações desafiadoras.</p>
+        </div>
       </div>
-      </a>
-    <% }) %>
-    </div>
+    </section>
   </main>
 </body>
 </html>
-
