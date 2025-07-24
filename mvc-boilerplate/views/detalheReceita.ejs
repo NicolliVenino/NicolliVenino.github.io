@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title><%= receita.name %></title>
+  <link rel="stylesheet" href="/css/detalheReceita.css">
+</head>
+<body>
+  <div class="recipe-page">
+
+    <div class="side-panel left-panel">
+      <% esquerda.forEach(r => { %>
+        <a href="/receitas/<%= r.id %>" class="recipe-card">
+          <img src="<%= r.image %>" alt="<%= r.name %>">
+          <p><%= r.name %></p>
+        </a>
+      <% }) %>
+    </div>
+    <div class="middle-panel">
+
+      <div class="action-buttons">
+
+        <a href="/dashboard" class="action-buttons">
+          <button title="Voltar">←</button>
+        </a>
+        
+      </div>
+      <div class="recipe-image">
+        <img src="<%= receita.image %>" alt="<%= receita.name %>">
+      </div>
+
+      <div class="save-form">
+        <form action="/folders/salvar-receita" method="POST">
+          <input type="hidden" name="recipeId" value="<%= receita.id %>">
+          <select name="folderId" required>
+            <% pastas.forEach(pasta => { %>
+              <option value="<%= pasta.id %>"><%= pasta.name %></option>
+            <% }) %>
+          </select>
+          <button type="submit">Salvar na Pasta</button>
+        </form>
+      </div>
+
+      <div class="recipe-main">
+        <h2><%= receita.name %></h2>
+        <div class="author-line">
+          <span class="icon">👤</span> <%= receita.author %>
+        </div>
+
+        <div class="info-boxes">
+          <div class="info-box">prep_time: <%= receita.prep_time %> min</div>
+          <div class="info-box">cook_time: <%= receita.cook_time %> min</div>
+          <div class="info-box">amount: <%= receita.amount %></div>
+          <div class="info-box">score: <%= receita.score %>/5</div>
+        </div>
+
+        <h3>Modo de Preparo:</h3>
+        <ul class="directions-list">
+          <% receita.directions.split('.').forEach(passo => { if(passo.trim()) { %>
+            <li><%= passo.trim() %>.</li>
+          <% } }) %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="side-panel right-panel">
+      <% direita.forEach(r => { %>
+        <a href="/receitas/<%= r.id %>" class="recipe-card">
+          <img src="<%= r.image %>" alt="<%= r.name %>">
+          <p><%= r.name %></p>
+        </a>
+      <% }) %>
+    </div>
+    
+  </div>
+</body>
+</html>
