@@ -35,7 +35,7 @@ app.use('/', folder_recipeRoutes);
 app.use('/api', recipe_ingredientRoutes);
 
 app.get('/', (req, res) => {
-  res.render('login',{ error: null }); // ou 'home', ou qualquer nome de view que exista
+  res.render('login'); // ou 'home', ou qualquer nome de view que exista
 })
 // Inicializa o servidor
 const PORT = process.env.PORT || 3000;
